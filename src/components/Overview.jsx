@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import line from "../assets/home_page_svg.svg";
 import man from "../assets/man-wearing-smart-glasses-touching-virtual-screen 1.png";
-import blaster from "../assets/image.png";
+import blaster from "../assets/Image.png";
 import star from "../assets/star.svg";
 import grayStar from "../assets/grey_star.svg";
 import Featther from "./Featther";

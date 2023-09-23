@@ -266,6 +266,7 @@ function Register({ setNavon }) {
           <div className="loader"></div>
         </div>
       )}
+      <Success />
       {done && <Success />}
       <Featther type={"regTop"} />
       <Featther type={"regBottom"} />
@@ -307,7 +308,7 @@ const Success = () => {
         </p>
         <p data-aos="fade-down">
           Yes, it was easy and you did it!
-          <span className="flex items-center gap-x-2">
+          <span className="flex items-center md:gap-x-2">
             check your mail box for next step
             <img src={wink} data-aos="fade-left" />
           </span>

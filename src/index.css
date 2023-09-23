@@ -40,10 +40,9 @@
 
 * {
   font-family: var(--default-font);
-  overflow-x: hidden !important;
 }
 * {
-  @apply m-0 p-0 box-border select-none active:select-none overflow-x-hidden;
+  @apply m-0 p-0 box-border select-none active:select-none;
 }
 
 a {
@@ -54,6 +53,9 @@ a {
 
 body {
   @apply bg-[color:var(--dark-bg)] overflow-x-hidden w-screen text-[color:var(--text-color)] no-scrollbar scroll-smooth relative;
+}
+body {
+  overflow-x: hidden !important;
 }
 
 nav {

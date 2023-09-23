@@ -1,0 +1,57 @@
+.first {
+  top: 4rem;
+  left: 14rem;
+}
+.second {
+  top: 7rem;
+  right: 5rem;
+  background: linear-gradient(180deg, #8f3aff 0%, rgba(0, 0, 0, 0) 100%);
+}
+.third {
+  top: 6rem;
+  left: 11rem;
+}
+.fourth {
+  top: 9rem;
+  right: -11rem;
+}
+.five,
+.sevfive {
+  top: 45vh;
+  left: 6rem;
+}
+.six,
+.sevsix {
+  top: 90vh;
+  right: -5rem;
+}
+.regTop {
+  top: -2rem;
+  left: -2rem;
+}
+.regBottom {
+  bottom: -2rem;
+  right: -2rem;
+}
+@media only screen and (max-width: 600px) {
+  .first {
+    top: 4rem;
+    left: -5rem;
+  }
+  .second {
+    display: none;
+  }
+  .third {
+    top: 6rem;
+    left: -5rem;
+  }
+  .fourth {
+    top: 50%;
+    right: -15rem;
+  }
+  .five,
+  .sevfive {
+    top: 20vh;
+    left: -6rem;
+  }
+}

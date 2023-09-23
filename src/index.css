@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Unica+One&display=swap");
+@font-face {
+  font-family: "Clash display";
+  src: url("./font/ClashDisplay-Bold.otf") format("opentype"),
+    url("./font/ClashDisplay-Extralight.otf") format("opentype"),
+    url("./font/ClashDisplay-Light.otf") format("opentype"),
+    url("./font/ClashDisplay-Medium.otf") format("opentype"),
+    url("./font/ClashDisplay-Regular.otf") format("opentype"),
+    url("./font/ClashDisplay-Semibold.otf") format("opentype");
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  @layer utilities {
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+  }
+}
+
+:root {
+  --gradient-bg: linear-gradient(270deg, #903aff 0%, #fe34b9 100%);
+  --dark-bg: #150e28;
+  --mid-bg: #903aff;
+  --light-bg: #d434fe;
+  --default-font: "Montserrat";
+  --special-font: "Clash display";
+  --timer-font: "Unica One";
+  --text-color: #ffffffff;
+}
+
+* {
+  font-family: var(--default-font);
+}
+* {
+  @apply m-0 p-0 box-border select-none active:select-none;
+}
+
+a {
+  font-weight: 500;
+  color: none;
+  text-decoration: none;
+}
+
+body {
+  @apply bg-[color:var(--dark-bg)] overflow-x-hidden w-screen text-[color:var(--text-color)] no-scrollbar scroll-smooth relative;
+}
+
+nav {
+  @apply w-full md:h-[4rem] backdrop-blur-md bg-[#00000009] fixed top-0 left-0 flex md:justify-between gap-x-[1rem] items-center px-3 md:px-[4rem] text-white text-[1rem] z-50 h-[3.5rem];
+}
+
+.InnerNav {
+  @apply md:w-full md:h-full flex flex-col px-8 md:px-0 text-center md:text-start md:static md:flex-row justify-start gap-y-[2rem]  md:justify-center gap-x-[4rem] md:items-center items-start absolute left-0  z-[20] w-screen h-screen md:overflow-visible  no-scrollbar overflow-scroll md:py-0 pt-[4rem] pb-[3rem] md:bg-transparent   transition-all bg-[color:var(--dark-bg)];
+}
+
+.logo-cont span,
+.homepageP .span,
+.introP span,
+.p {
+  @apply text-[color:var(--light-bg)];
+}
+.logo {
+  @apply text-[0.9rem] md:text-[1.4rem];
+}
+.logo,
+.homepageP,
+.p {
+  font-family: var(--special-font);
+}
+
+.logo span,
+.homepageP span,
+.introP,
+.introP span,
+.timeP {
+  font-family: var(--special-font);
+}
+.menu {
+  @apply px-[2rem] py-[6px] md:py-[0.5rem] hover:opacity-75 rounded-md md:hidden transition-all;
+}
+
+.register {
+  @apply items-center h-[3rem] w-[8rem] justify-center bg-gradient-to-r from-[#FE34B9] to-primary rounded-md md:ml-[4rem] flex justify-self-end md:absolute right-[1rem] overflow-hidden;
+}
+.overview {
+  @apply pt-[4.1rem] w-screen md:h-screen h-auto  relative overflow-hidden;
+}
+
+.feather {
+  background: linear-gradient(180deg, #8f3aff6d 0%, rgba(0, 0, 0, 0) 100%);
+  filter: blur(25px);
+  z-index: -1;
+}
+
+.timer,
+.timer p span {
+  font-family: var(--timer-font);
+}
+.timer p {
+  @apply text-[0.87rem] font-normal;
+}
+.timer p span {
+  @apply text-[4rem];
+}
+.intro {
+  @apply w-full h-screen flex md:flex-row flex-col justify-between items-center p-[2rem] border-[#ffffff2e] border-y-2 relative pt-[4rem] overflow-hidden;
+}
+.attrib {
+  @apply w-full h-auto flex md:flex-row flex-col justify-between items-center p-1 md:p-[2rem] border-[#ffffff2e] border-y-2 relative pt-[4rem] overflow-hidden;
+}
+.reward {
+  @apply bg-[#110B20] -z-20 w-full h-auto  relative pt-[4rem] overflow-hidden;
+}
+.rewards {
+  @apply -z-20 w-full h-auto  relative pt-[4rem] overflow-hidden;
+}
+
+.faqs {
+  width: 100%;
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 15px;
+  text-align: left;
+}
+
+.faqs .faq {
+  margin: 15px;
+  padding: 15px;
+
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid var(--light-bg);
+}
+
+.faqs .faq .faq-question {
+  position: relative;
+
+  padding-right: 80px;
+  transition: all 0.4s ease;
+}
+
+.faqs .faq .faq-question::after {
+  content: "+";
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: 0px;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  transition: all 0.2s ease;
+  color: var(--light-bg);
+  font-weight: 500;
+}
+
+.faqs .faq .faq-answer {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.faqs .faq.open .faq-question {
+  margin-bottom: 15px;
+}
+
+.faqs .faq.open .faq-question::after {
+  content: "-";
+}
+
+.faqs .faq.open .faq-answer {
+  max-height: 1000px;
+  opacity: 1;
+}
+
+.vertical-timeline-element .vertical-timeline-element-icon {
+  border: none !important;
+}
+.title {
+  @apply text-secondary text-[1.5rem] font-bold;
+}
+.ul {
+  @apply pl-[2.5rem] text-left;
+}
+.ul li {
+  @apply list-image-[url("./assets/done.svg")] pb-[2rem];
+}
+.policy {
+  @apply w-full h-auto flex md:flex-row flex-col justify-between items-center p-1 md:p-[2rem] border-[#ffffff2e] border-t-2 relative pt-[4rem] overflow-hidden;
+}
+.footer {
+  @apply bg-[#110B20] py-9 px-4 w-screen flex flex-col items-center gap-y-6;
+}
+.footerDiv {
+  @apply w-full flex md:flex-row flex-col justify-center md:gap-x-8 gap-y-8;
+}
+
+.form {
+  @apply rounded-md md:bg-[#ffffff08] drop-shadow-md md:w-1/2 w-full  p-6;
+}
+
+.login {
+  @apply w-screen md:h-screen overflow-hidden pt-[4rem] flex md:flex-row flex-col justify-between items-center relative md:px-[10%];
+}
+.RegisterPage {
+  @apply w-screen  overflow-hidden md:pb-6 pt-[4rem] flex md:flex-row flex-col justify-between items-start relative md:px-[10%];
+}
+select option {
+  @apply bg-secondary w-full border-0 hover:scale-105 my-[1rem] duration-500 transition-colors;
+}
+.laoderCont {
+  @apply w-screen h-screen absolute top-0 left-0 flex justify-center items-center bg-[color:var(--dark-bg)] z-30;
+}
+.loader {
+  width: 45px;
+  aspect-ratio: 1;
+  --c: no-repeat linear-gradient(#ffffff 0 0);
+  background: var(--c) 0% 100%, var(--c) 50% 100%, var(--c) 100% 100%;
+  animation: l2 1s infinite linear;
+}
+@keyframes l2 {
+  0% {
+    background-size: 20% 100%, 20% 100%, 20% 100%;
+  }
+  20% {
+    background-size: 20% 60%, 20% 100%, 20% 100%;
+  }
+  40% {
+    background-size: 20% 80%, 20% 60%, 20% 100%;
+  }
+  60% {
+    background-size: 20% 100%, 20% 80%, 20% 60%;
+  }
+  80% {
+    background-size: 20% 100%, 20% 100%, 20% 80%;
+  }
+  100% {
+    background-size: 20% 100%, 20% 100%, 20% 100%;
+  }
+}

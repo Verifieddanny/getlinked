@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Overview from "../components/Overview";
 import Intro from "../components/Intro";
 import Rules from "../components/Rules";
-import Attribute from "../components/attribute";
+import Attribute from "../components/Attribute";
 import Faq from "../components/Faq";
 import TimeLine from "../components/TimeLine";
 import Reward from "../components/Reward";
@@ -14,9 +14,20 @@ import "aos/dist/aos.css";
 
 function GetContents({ setNavon }) {
   const [showButton, setShowButton] = useState(false);
+
   useEffect(() => {
     setNavon(true);
   }, []);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 750,
+      offset: 0,
+      once: true,
+      anchorPlacement: "top-bottom",
+    });
+  }, []);
+
   useEffect(() => {
     const handleVisibility = () => {
       window.scrollY > 300 ? setShowButton(true) : setShowButton(false);
@@ -31,9 +42,9 @@ function GetContents({ setNavon }) {
   const handleScrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
   return (
     <>
-      {/* <Loader /> */}
       <Overview />
       <Intro />
       <Rules />
@@ -44,25 +55,19 @@ function GetContents({ setNavon }) {
       <Partners />
       <Policy />
       <Footer />
-      {showButton && <ToTop top={handleScrollToTop} />}
+      {showButton && <ToTop top={handleScrollToTop} showButton={showButton} />}
     </>
   );
 }
 
 export default GetContents;
 
-const ToTop = ({ top }) => {
-  useEffect(() => {
-    AOS.init({
-      duration: 750,
-      offset: 0,
-      once: true,
-      anchorPlacement: "top-bottom",
-    });
-  }, []);
+const ToTop = ({ top, showButton }) => {
   return (
     <button
-      className="p-4 flex items-center justify-center bg-gradient-to-r from-[#FE34B9] to-primary rounded-lg mt-[2rem] fixed bottom-5 right-7 cursor-pointer"
+      className={`${
+        showButton ? "block" : "hidden"
+      } p-4 flex items-center justify-center bg-gradient-to-r from-[#FE34B9] to-primary rounded-lg mt-[2rem] fixed bottom-5 right-7 cursor-pointer`}
       onClick={top}
       data-aos="fade-down"
     >

@@ -21,6 +21,7 @@ function Register({ setNavon }) {
   const [agreement, setAgreement] = useState(false);
   const [done, setDone] = useState(false);
   const [categoryList, setCategoryList] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
     AOS.init({
       duration: 750,
@@ -43,6 +44,7 @@ function Register({ setNavon }) {
   }, []);
 
   const registerGroup = async (register) => {
+    setIsLoading(true);
     try {
       const res = await fetch(`${baseUrl}/hackathon/registration`, {
         method: "POST",
@@ -52,10 +54,7 @@ function Register({ setNavon }) {
         },
       });
 
-      if (res.ok !== true) {
-        toast.error("Issue under dev");
-        return;
-      }
+      if (res.ok === true) setIsLoading(false);
       const data = await res.json();
     } catch (err) {
       toast.error("something went wrong try again");
@@ -262,6 +261,11 @@ function Register({ setNavon }) {
           </div>
         </form>
       </div>
+      {isLoading && (
+        <div className="laoderCont">
+          <div className="loader"></div>
+        </div>
+      )}
       {done && <Success />}
       <Featther type={"regTop"} />
       <Featther type={"regBottom"} />

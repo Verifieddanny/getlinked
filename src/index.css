@@ -56,7 +56,7 @@ body {
 }
 
 nav {
-  @apply w-full md:h-[4rem] backdrop-blur-md bg-[#00000009] fixed top-0 left-0 flex md:justify-between gap-x-[1rem] items-center px-3 md:px-[4rem] text-white text-[1rem] z-50 h-[3.5rem];
+  @apply w-screen md:h-[4rem] backdrop-blur-md bg-[#00000009] fixed top-0 left-0 flex md:justify-between gap-x-[1rem] items-center px-3 md:px-[4rem] text-white text-[1rem] z-50 h-[3.5rem];
 }
 
 .InnerNav {

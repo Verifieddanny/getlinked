@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Overview from "../components/Overview";
 import Intro from "../components/Intro";
 import Rules from "../components/Rules";
-import Attribute from "../components/Attribute";
+import Attribute from "../components/attribute";
 import Faq from "../components/Faq";
 import TimeLine from "../components/TimeLine";
 import Reward from "../components/Reward";
@@ -14,11 +14,9 @@ import "aos/dist/aos.css";
 
 function GetContents({ setNavon }) {
   const [showButton, setShowButton] = useState(false);
-
   useEffect(() => {
     setNavon(true);
   }, []);
-
   useEffect(() => {
     AOS.init({
       duration: 750,
@@ -27,7 +25,6 @@ function GetContents({ setNavon }) {
       anchorPlacement: "top-bottom",
     });
   }, []);
-
   useEffect(() => {
     const handleVisibility = () => {
       window.scrollY > 300 ? setShowButton(true) : setShowButton(false);
@@ -42,7 +39,6 @@ function GetContents({ setNavon }) {
   const handleScrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
-
   return (
     <>
       <Overview />

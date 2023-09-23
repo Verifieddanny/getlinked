@@ -266,7 +266,7 @@ function Register({ setNavon }) {
           <div className="loader"></div>
         </div>
       )}
-      <Success />
+
       {done && <Success />}
       <Featther type={"regTop"} />
       <Featther type={"regBottom"} />

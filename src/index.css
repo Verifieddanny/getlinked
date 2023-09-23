@@ -65,6 +65,9 @@ nav {
 .InnerNav {
   @apply md:w-full md:h-full flex flex-col px-8 md:px-0 text-center md:text-start md:static md:flex-row justify-start gap-y-[2rem]  md:justify-center gap-x-[4rem] md:items-center items-start absolute left-0  z-[20] w-screen h-screen md:overflow-visible  no-scrollbar overflow-scroll md:py-0 pt-[4rem] pb-[3rem] md:bg-transparent   transition-all bg-[color:var(--dark-bg)];
 }
+.navItems {
+  @apply w-fit px-3 py-1 hover:bg-[#FE34B9] transition-colors duration-700 rounded-md;
+}
 
 .logo-cont span,
 .homepageP .span,

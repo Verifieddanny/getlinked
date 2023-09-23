@@ -39,6 +39,7 @@ const NavBar = ({ navOn }) => {
                 setOpen(!open);
                 setToggle(false);
               }}
+              className="navItems"
             >
               Timeline
             </Link>
@@ -49,6 +50,7 @@ const NavBar = ({ navOn }) => {
                 setOpen(!open);
                 setToggle(false);
               }}
+              className="navItems"
             >
               Overview
             </Link>
@@ -60,6 +62,7 @@ const NavBar = ({ navOn }) => {
                 setOpen(!open);
                 setToggle(false);
               }}
+              className="navItems"
             >
               FAQs
             </Link>
@@ -69,6 +72,7 @@ const NavBar = ({ navOn }) => {
                 setOpen(!open);
                 setToggle(false);
               }}
+              className="navItems"
             >
               Contact
             </NavLink>

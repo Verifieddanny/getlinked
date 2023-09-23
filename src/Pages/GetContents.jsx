@@ -9,11 +9,28 @@ import Reward from "../components/Reward";
 import Partners from "../components/Partners";
 import Policy from "../components/Policy";
 import Footer from "../components/Footer";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function GetContents({ setNavon }) {
+  const [showButton, setShowButton] = useState(false);
   useEffect(() => {
     setNavon(true);
   }, []);
+  useEffect(() => {
+    const handleVisibility = () => {
+      window.scrollY > 300 ? setShowButton(true) : setShowButton(false);
+    };
+    window.addEventListener("scroll", handleVisibility);
+
+    return () => {
+      window.removeEventListener("scroll", handleVisibility);
+    };
+  }, []);
+
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   return (
     <>
       {/* <Loader /> */}
@@ -27,26 +44,29 @@ function GetContents({ setNavon }) {
       <Partners />
       <Policy />
       <Footer />
+      {showButton && <ToTop top={handleScrollToTop} />}
     </>
   );
 }
 
 export default GetContents;
 
-// const Loader = () => {
-//   const [loaded, setLoaded] = useState(true);
-//   useEffect(() => {
-//     setTimeout(() => {
-//       setLoaded(false);
-//     }, 5000);
-//   }, []);
-//   return (
-//     <>
-//       {loaded && (
-//         <div className="laoderCont">
-//           <div className="loader"></div>
-//         </div>
-//       )}
-//     </>
-//   );
-// };
+const ToTop = ({ top }) => {
+  useEffect(() => {
+    AOS.init({
+      duration: 750,
+      offset: 0,
+      once: true,
+      anchorPlacement: "top-bottom",
+    });
+  }, []);
+  return (
+    <button
+      className="p-4 flex items-center justify-center bg-gradient-to-r from-[#FE34B9] to-primary rounded-lg mt-[2rem] fixed bottom-5 right-7 cursor-pointer"
+      onClick={top}
+      data-aos="fade-down"
+    >
+      👆
+    </button>
+  );
+};

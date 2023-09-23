@@ -120,7 +120,7 @@ function Contact({ setNavon }) {
       </div>
       <div className="form" data-aos="fade-right">
         <form
-          className="flex flex-col md:gap-y-5 gap-y-7 h-auto  items-center"
+          className="flex flex-col md:gap-y-5 gap-y-7 h-auto  "
           onSubmit={handleSubmit}
         >
           <p className="p md:text-[1rem] text-left">
@@ -147,7 +147,11 @@ function Contact({ setNavon }) {
             onChange={(e) => setMessage(e.target.value)}
             value={message}
           />
-          <Button>Submit</Button>
+          <div className="w-full flex justify-center">
+            <button className="h-[3rem] w-[8rem] md:w-full flex items-center justify-center bg-gradient-to-r from-[#FE34B9] to-primary rounded-lg mt-[2rem]">
+              Submit
+            </button>
+          </div>
         </form>
       </div>
       <div className="md:hidden flex flex-col w-full items-center gap-y-3 mb-3">

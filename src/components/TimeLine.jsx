@@ -369,6 +369,7 @@ function TimeLine() {
               padding: 0,
             },
           }}
+          style={{ overflowX: "hidden" }}
         >
           <TimelineItem>
             <TimelineSeparator>

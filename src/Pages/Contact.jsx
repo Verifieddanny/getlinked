@@ -15,6 +15,7 @@ function Contact({ setNavon }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   useEffect(() => {
     AOS.init({
@@ -25,6 +26,7 @@ function Contact({ setNavon }) {
     });
   }, []);
   const contactMe = async (newContact) => {
+    setIsLoading(true);
     try {
       const res = await fetch(`${baseUrl}/hackathon/contact-form`, {
         method: "POST",
@@ -34,10 +36,7 @@ function Contact({ setNavon }) {
         },
       });
 
-      if (res.ok !== true) {
-        toast.error("Issue under dev");
-        return;
-      }
+      if (res.ok === true) setIsLoading(false);
       const data = await res.json();
       toast.success("Message Sent😉");
     } catch (err) {
@@ -162,6 +161,11 @@ function Contact({ setNavon }) {
       <Featther type={"regTop"} />
       <Featther type={"regBottom"} />
       <Toaster position="bottom-right" expand={false} richColors />
+      {isLoading && (
+        <div className="laoderCont">
+          <div className="loader"></div>
+        </div>
+      )}
     </section>
   );
 }

@@ -83,7 +83,7 @@ function Overview() {
       />
       <Featther type={"first"} />
       <Featther type={"second"} />
-      <div className="w-screen h-[80vh] md:h-auto   px-[4rem] flex md:flex-row flex-col justify-between md:m-0 mt-[3rem]">
+      <div className="w-full h-[80vh] md:h-auto   px-[4rem] flex md:flex-row flex-col justify-between md:m-0 mt-[3rem]">
         <div className="relative md:w-[50%] w-full md:block flex flex-col items-center md:m-0 mb-[2rem]  ">
           <p
             className="homepageP md:text-[2rem] flex flex-col md:text-left text-center"

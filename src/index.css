@@ -57,7 +57,11 @@ body {
 body {
   overflow-x: hidden !important;
 }
-
+#root {
+  max-width: 1200px; /* Adjust the value to your preference */
+  margin: 0 auto; /* Center-align the container */
+  padding: 20px; /* Add padding for spacing */
+}
 nav {
   @apply w-screen md:h-[4rem] backdrop-blur-md bg-[#00000009] fixed top-0 left-0 flex md:justify-between gap-x-[1rem] items-center px-3 md:px-[4rem] text-white text-[1rem] z-50 h-[3.5rem];
 }
@@ -99,7 +103,7 @@ nav {
   @apply items-center h-[3rem] w-[8rem] justify-center bg-gradient-to-r from-[#FE34B9] to-primary rounded-md md:ml-[4rem] flex justify-self-end md:absolute right-[1rem] overflow-hidden;
 }
 .overview {
-  @apply pt-[4.1rem] w-screen md:h-screen h-auto  relative overflow-hidden;
+  @apply pt-[4.1rem] w-full md:h-screen h-auto  relative overflow-hidden;
 }
 
 .feather {
@@ -204,7 +208,7 @@ nav {
   @apply w-full h-auto flex md:flex-row flex-col justify-between items-center p-1 md:p-[2rem] border-[#ffffff2e] border-t-2 relative pt-[4rem] overflow-hidden;
 }
 .footer {
-  @apply bg-[#110B20] py-9 px-4 w-screen flex flex-col items-center gap-y-6;
+  @apply bg-[#110B20] py-9 px-4 w-full flex flex-col items-center gap-y-6;
 }
 .footerDiv {
   @apply w-full flex md:flex-row flex-col justify-center md:gap-x-8 gap-y-8;

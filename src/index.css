@@ -221,7 +221,7 @@ nav {
   @apply w-screen  overflow-hidden md:pb-6 pt-[4rem] flex md:flex-row flex-col justify-between items-start relative md:px-[10%];
 }
 select option {
-  @apply bg-secondary w-full border-0 hover:scale-105 my-[1rem] duration-500 transition-colors;
+  @apply bg-[color:var(--dark-bg)] w-full border-0 hover:scale-105 my-[1rem] duration-500 transition-colors;
 }
 .laoderCont {
   @apply w-screen h-screen absolute top-0 left-0 flex justify-center items-center bg-[color:var(--dark-bg)] z-30;
